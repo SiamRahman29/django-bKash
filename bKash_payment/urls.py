@@ -9,14 +9,8 @@ from views import *
 
 from django.contrib import admin
 admin.autodiscover()
-
-urlpatterns = patterns('',
-
-    url (
-           regex = '^$',
-           view =  auth(home),
-           name = 'bKash-home'
-    ),
-)
+urlpatterns = [
+    path('', auth(home), name='bKash-home'),
+]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
